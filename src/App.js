@@ -1,13 +1,13 @@
 import "./App.css";
 import { Navbar } from "./components/Navbar";
-import { Task } from "./components/Task";
+import { Form } from "./components/Form";
 
 
 function App() {
   return (
     <div>
       <Navbar/>
-      <Task />
+      <Form />
     </div>
   );
 }

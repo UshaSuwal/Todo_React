@@ -1,10 +1,18 @@
+import { Button } from "./Button";
 import { Todo } from "./Todo";
-import { useState } from "react";
+import { useState} from 'react';
 
-export function Task() {
+export function Form() {
   const [todo, setTodo] = useState([]);
   const [task, setTask] = useState("");
   const [randomIndex, setRandomIndex] = useState(null);
+
+
+  // useEffect(() => {
+  //   fetch('http://localhost:3000/api/v1/movies/278/reviews')
+  //     .then(response => response.json())
+  //     .then(data => setTodo(data))
+  // }, []);
 
   function add() {
     if (task) {
@@ -28,7 +36,7 @@ export function Task() {
     <div className="p-4 bg-black min-h-screen flex flex-col items-center">
       <div className="container mx-auto mt-24 flex justify-center gap-12">
         <div
-          className="w-2/5 p-10 bg-gray-800 rounded-xl shadow-lg"
+          className="w-2/5 p-10 bg-gray-700 rounded-xl shadow-lg"
           style={{ boxShadow: "0 10px 15px rgba(255, 255, 255, 0.2)" }}
         >
           <input
@@ -41,23 +49,11 @@ export function Task() {
           />
 
           <div className="flex justify-between mb-4">
-            <button
-              onClick={add}
-              className="w-1/2 p-2 bg-red-400 text-white rounded-lg hover:bg-red-500 transition text-xl"
-              style={{ fontFamily: "Philosopher, sans-serif" }}
-            >
-              Save
-              <i class="fa-solid fa-floppy-disk ml-2 "></i>
-            </button>
 
-            <button
-              onClick={displayRandom}
-              className="w-1/2 p-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition ml-2 text-xl"
-              style={{ fontFamily: "Philosopher, sans-serif" }}
-            >
-              Random
-              <i class="fa-solid fa-shuffle ml-2"></i>
-            </button>
+
+            <Button clicked={add} color={"red"} icon={"fa-solid fa-floppy-disk ml-2"} text={"Save"}/>
+            <Button clicked={displayRandom} color={"gray"} icon={"fa-solid fa-shuffle ml-2"} text={"Random"} />
+            
           </div>
 
           <div
