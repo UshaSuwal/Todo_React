@@ -1,12 +1,13 @@
 import "./App.css";
 import { Navbar } from "./components/Navbar";
-import { Todo } from "./components/Todo";
+import { Task } from "./components/Task";
+
 
 function App() {
   return (
     <div>
       <Navbar/>
-      <Todo />
+      <Task />
     </div>
   );
 }
