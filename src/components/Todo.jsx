@@ -25,12 +25,7 @@ export function Todo() {
 
   return (
     <div className="p-4 bg-black min-h-screen flex flex-col items-center">
-      <nav className="w-full bg-gray-900 p-4 text-white top-0 fixed" >
-        <div className="container mx-auto flex justify-between">
-          <span className="text-5xl font-bold text-red-500 ml-10" style={{ fontFamily: "Philosopher, sans-serif" }}>Todo<span className="text-gray-200">App <i class="fa-solid fa-list text-3xl"></i></span> </span>
-        </div>
-      </nav>
-
+      
       <div className="container mx-auto mt-24 flex justify-center gap-12">
         <div
           className="w-2/5 p-10 bg-gray-800 rounded-xl shadow-lg"
@@ -81,7 +76,7 @@ export function Todo() {
             {todo.map((task, index) => (
               <div key={index} className="flex mb-2">
               <div className="text-white mr-2 mt-1" style={{ fontFamily: "Philosopher, sans-serif" }}>{index + 1}.</div>
-              <span key={index} className="p-1 bg-red-100 rounded mb-2 text-black w-full" style={{ fontFamily: "Philosopher, sans-serif" }}>
+              <span key={index} className="p-1 bg-sky-100 rounded mb-2 text-black w-full" style={{ fontFamily: "Philosopher, sans-serif" }}>
                 {task}
               </span>
               </div>
