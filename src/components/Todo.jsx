@@ -24,52 +24,58 @@ export function Todo() {
   }
 
   return (
-    <div className="p-4 bg-gray-100 min-h-screen flex flex-col items-center">
-      <nav className="w-full bg-cyan-100 p-4 text-white top-0 fixed">
+    <div className="p-4 bg-black min-h-screen flex flex-col items-center">
+      <nav className="w-full bg-black p-4 text-white top-0 fixed">
         <div className="container mx-auto flex justify-between">
-          <span className="text-3xl font-bold text-black">Todo App</span>
+          <span className="text-3xl font-bold text-red-500">Todo App</span>
         </div>
       </nav>
 
-      {/* Center the items in the flex container */}
       <div className="container mx-auto mt-24 flex justify-center gap-12">
-        {/* Left section with shadow */}
-        <div className="w-2/5 p-4 bg-white rounded-xl shadow-lg">
+        <div
+          className="w-2/5 p-10 bg-gray-800 rounded-xl shadow-lg"
+          style={{ boxShadow: '0 10px 15px rgba(255, 255, 255, 0.2)' }}
+        >
           <input
             type="text"
             value={task}
             onChange={handleChange}
-            className="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-400 mb-4"
+            className="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:border-red-400 mb-10"
             placeholder="Add a task..."
+            style={{ height: '150px', color: 'black' }}
           />
 
           <div className="flex justify-between mb-4">
             <button
               onClick={add}
-              className="w-1/2 p-2 bg-blue-400 text-white rounded-lg hover:bg-blue-500 transition"
+              className="w-1/2 p-2 bg-red-400 text-white rounded-lg hover:bg-red-500 transition"
             >
               Save
             </button>
 
             <button
               onClick={displayRandom}
-              className="w-1/2 p-2 bg-sky-400 text-white rounded-lg hover:bg-sky-500 transition ml-2"
+              className="w-1/2 p-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition ml-2"
             >
               Random
             </button>
           </div>
 
-          {/* Display the random to-do item below the form */}
-          <div className="mt-4 p-2 bg-sky-100 rounded-lg">
+          <div className="mt-10 p-2 text-white text-xl">
             {randomIndex !== null && todo[randomIndex]}
           </div>
         </div>
 
-        {/* Right section with shadow */}
-        <div className="w-1/3 p-4 bg-white rounded-xl shadow-lg">
-          <div className="flex flex-col">
+        <div
+          className="w-2/4 p-4 bg-gray-800 rounded-xl shadow-lg"
+          style={{
+            boxShadow: '0 10px 15px rgba(255, 255, 255, 0.2)',
+            height: '450px',
+          }}
+        >
+          <div className="flex flex-col overflow-y-auto" style={{ maxHeight: '100%' }}>
             {todo.map((task, index) => (
-              <span key={index} className="p-2 bg-cyan-100 rounded-lg mb-2">
+              <span key={index} className="p-2 bg-red-100 rounded-lg mb-2 text-black">
                 {task}
               </span>
             ))}
