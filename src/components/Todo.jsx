@@ -25,9 +25,9 @@ export function Todo() {
 
   return (
     <div className="p-4 bg-black min-h-screen flex flex-col items-center">
-      <nav className="w-full bg-gray-900 p-4 text-white top-0 fixed">
+      <nav className="w-full bg-gray-900 p-4 text-white top-0 fixed" >
         <div className="container mx-auto flex justify-between">
-          <span className="text-5xl font-bold text-red-500 ml-10" style={{ fontFamily: "Philosopher, sans-serif" }}>Todo App</span>
+          <span className="text-5xl font-bold text-red-500 ml-10" style={{ fontFamily: "Philosopher, sans-serif" }}>Todo<span className="text-gray-200">App <i class="fa-solid fa-list text-3xl"></i></span> </span>
         </div>
       </nav>
 
@@ -42,24 +42,26 @@ export function Todo() {
             onChange={handleChange}
             className="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:border-red-400 mb-10"
             placeholder="Add a task..."
-            style={{ height: '150px', color: 'black' }}
+            style={{ height: '150px', color: 'black'}}
           />
 
           <div className="flex justify-between mb-4">
             <button
               onClick={add}
-              className="w-1/2 p-2 bg-red-400 text-white rounded-lg hover:bg-red-500 transition"
+              className="w-1/2 p-2 bg-red-400 text-white rounded-lg hover:bg-red-500 transition text-xl"
               style={{ fontFamily: "Philosopher, sans-serif" }}
             >
               Save
+              <i class="fa-solid fa-floppy-disk ml-2 "></i>
             </button>
 
             <button
               onClick={displayRandom}
-              className="w-1/2 p-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition ml-2"
+              className="w-1/2 p-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition ml-2 text-xl"
               style={{ fontFamily: "Philosopher, sans-serif" }}
             >
               Random
+              <i class="fa-solid fa-shuffle ml-2"></i>
             </button>
           </div>
 
@@ -78,8 +80,8 @@ export function Todo() {
           <div className="flex flex-col overflow-y-auto" style={{ maxHeight: '100%' }}>
             {todo.map((task, index) => (
               <div key={index} className="flex mb-2">
-              <div className="text-white mr-2" style={{ fontFamily: "Philosopher, sans-serif" }}>{index + 1}.</div>
-              <span key={index} className="p-1 bg-red-100 mb-2 text-black w-full" style={{ fontFamily: "Philosopher, sans-serif" }}>
+              <div className="text-white mr-2 mt-1" style={{ fontFamily: "Philosopher, sans-serif" }}>{index + 1}.</div>
+              <span key={index} className="p-1 bg-red-100 rounded mb-2 text-black w-full" style={{ fontFamily: "Philosopher, sans-serif" }}>
                 {task}
               </span>
               </div>
