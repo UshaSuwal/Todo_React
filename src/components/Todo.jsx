@@ -25,9 +25,9 @@ export function Todo() {
 
   return (
     <div className="p-4 bg-black min-h-screen flex flex-col items-center">
-      <nav className="w-full bg-black p-4 text-white top-0 fixed">
+      <nav className="w-full bg-gray-900 p-4 text-white top-0 fixed">
         <div className="container mx-auto flex justify-between">
-          <span className="text-3xl font-bold text-red-500">Todo App</span>
+          <span className="text-5xl font-bold text-red-500 ml-10" style={{ fontFamily: "Philosopher, sans-serif" }}>Todo App</span>
         </div>
       </nav>
 
@@ -49,6 +49,7 @@ export function Todo() {
             <button
               onClick={add}
               className="w-1/2 p-2 bg-red-400 text-white rounded-lg hover:bg-red-500 transition"
+              style={{ fontFamily: "Philosopher, sans-serif" }}
             >
               Save
             </button>
@@ -56,12 +57,13 @@ export function Todo() {
             <button
               onClick={displayRandom}
               className="w-1/2 p-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition ml-2"
+              style={{ fontFamily: "Philosopher, sans-serif" }}
             >
               Random
             </button>
           </div>
 
-          <div className="mt-10 p-2 text-white text-xl">
+          <div className="mt-10 p-2 text-white text-xl" style={{ fontFamily: "Philosopher, sans-serif" }}>
             {randomIndex !== null && todo[randomIndex]}
           </div>
         </div>
@@ -75,9 +77,12 @@ export function Todo() {
         >
           <div className="flex flex-col overflow-y-auto" style={{ maxHeight: '100%' }}>
             {todo.map((task, index) => (
-              <span key={index} className="p-2 bg-red-100 rounded-lg mb-2 text-black">
+              <div key={index} className="flex mb-2">
+              <div className="text-white mr-2" style={{ fontFamily: "Philosopher, sans-serif" }}>{index + 1}.</div>
+              <span key={index} className="p-1 bg-red-100 mb-2 text-black w-full" style={{ fontFamily: "Philosopher, sans-serif" }}>
                 {task}
               </span>
+              </div>
             ))}
           </div>
         </div>
