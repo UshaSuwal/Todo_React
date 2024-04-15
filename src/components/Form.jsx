@@ -8,12 +8,6 @@ export function Form() {
   const [randomIndex, setRandomIndex] = useState(null);
 
 
-  // useEffect(() => {
-  //   fetch('http://localhost:3000/api/v1/movies/278/reviews')
-  //     .then(response => response.json())
-  //     .then(data => setTodo(data))
-  // }, []);
-
   function add() {
     if (task) {
       setTodo([...todo, task]);
