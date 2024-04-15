@@ -31,9 +31,10 @@ export function Todo() {
         </div>
       </nav>
 
-      
-      <div className="container mx-auto mt-24 flex gap-4 ">
-        <div className="w-2/5 p-4 bg-white rounded-xl shadow-sm">
+      {/* Center the items in the flex container */}
+      <div className="container mx-auto mt-24 flex justify-center gap-12">
+        {/* Left section with shadow */}
+        <div className="w-2/5 p-4 bg-white rounded-xl shadow-lg">
           <input
             type="text"
             value={task}
@@ -42,7 +43,6 @@ export function Todo() {
             placeholder="Add a task..."
           />
 
-          
           <div className="flex justify-between mb-4">
             <button
               onClick={add}
@@ -51,7 +51,6 @@ export function Todo() {
               Save
             </button>
 
-            
             <button
               onClick={displayRandom}
               className="w-1/2 p-2 bg-sky-400 text-white rounded-lg hover:bg-sky-500 transition ml-2"
@@ -59,23 +58,21 @@ export function Todo() {
               Random
             </button>
           </div>
+
+          {/* Display the random to-do item below the form */}
+          <div className="mt-4 p-2 bg-sky-100 rounded-lg">
+            {randomIndex !== null && todo[randomIndex]}
+          </div>
         </div>
 
-
-
-        <div className="w-1/3 p-4 bg-white rounded-xl shadow-sm">
+        {/* Right section with shadow */}
+        <div className="w-1/3 p-4 bg-white rounded-xl shadow-lg">
           <div className="flex flex-col">
             {todo.map((task, index) => (
               <span key={index} className="p-2 bg-cyan-100 rounded-lg mb-2">
                 {task}
               </span>
             ))}
-          </div>
-
-          <div className="mt-4">
-            <span className="text-lg font-bold">
-              {randomIndex !== null ? todo[randomIndex] : ""}
-            </span>
           </div>
         </div>
       </div>
